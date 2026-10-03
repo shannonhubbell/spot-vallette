@@ -1,0 +1,123 @@
+---
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+const { header, description, slug } = Astro.props;
+
+const items = await getCollection("items", (item) => {
+    return Array.isArray(item.data.tags) && item.data.tags.includes(slug);
+});
+---
+
+<section class="menu-section" id={slug}>
+    <header>
+        <h3>{header}</h3>
+        <p class="description">{description}</p>
+    </header>
+    <ul>
+        {
+            items.map((item) => (
+                <li>
+                    <article class:list={item.data.tags}>
+                        <div class="thumb">
+                            {item.data.image && (
+                                <Image
+                                    src={item.data.image}
+                                    alt={item.data.name}
+                                />
+                            )}
+                        </div>
+                        <div class="text">
+                            <h4>{item.data.name}</h4>
+                            <p>{item.data.description}</p>
+                            <p class="price">${item.data.price}</p>
+                        </div>
+                    </article>
+                </li>
+            ))
+        }
+    </ul>
+</section>
+
+<style>
+    .menu-section {
+        header {
+            padding: 2rem;
+        }
+        h3 {
+            text-align: center;
+            color: #fff;
+            font-size: 2rem;
+            margin: 0;
+            padding: 0;
+        }
+        p.description {
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 1rem;
+            border-radius: 1rem;
+            color: var(--color-dark);
+            background: var(--color-light);
+        }
+        article {
+            display: flex;
+            margin: 1rem 0;
+            position: relative;
+            &.vegetarian::after {
+                content: "🌿";
+                position: absolute;
+                bottom: 2rem;
+                right: 2rem;
+                font-size: 2rem;
+            }
+            &.pescatarian::after {
+                content: "🦀";
+                position: absolute;
+                bottom: 2rem;
+                right: 2rem;
+                font-size: 2rem;
+            }
+            .thumb {
+                flex: 0 0 150px;
+                img {
+                    aspect-ratio: 1;
+                    object-fit: cover;
+                    height: auto;
+                    width: 100%;
+                    margin: 0;
+                    padding: 0;
+                    border-radius: 1rem;
+                    border: 1px solid var(--color-dark);
+                }
+            }
+            .text {
+                flex: 1;
+                min-width: 0;
+                padding: 1rem;
+                flex-direction: column;
+                justify-content: space-evenly;
+            }
+            h4 {
+                font-family: var(--font-body);
+                font-size: 1.5rem;
+                margin: 0;
+                padding: 0;
+            }
+            p {
+                margin: 0;
+                padding: 0;
+                font-size: 1rem;
+                line-height: 140%;
+                &.price {
+                    font-size: 1.5rem;
+                    font-family: var(--font-header);
+                    margin: 1rem;
+                }
+            }
+        }
+    }
+</style>

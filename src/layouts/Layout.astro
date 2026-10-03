@@ -1,3 +1,12 @@
+---
+import { ClientRouter } from "astro:transitions";
+const today = new Date();
+import "../styles/general.css";
+
+const { title, description } = Astro.props;
+const tabTitle = title ? title : "New Orleans Eats";
+---
+
 <!doctype html>
 <html lang="en">
 	<head>
@@ -6,10 +15,26 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>Spot Vallette - {tabTitle}</title>
+		<meta name="description" content={description} />
+		<link rel="canonical" href={Astro.url} />
+		<meta name="og:url" content={Astro.url} />
+		<meta name="og:site_name" content="Shannon Ellery Hubbell" />
+		<meta name="author" content="Shannon Ellery Hubbll" />
+
+		<meta name="twitter:card" content="summary_large_image" />
+		<ClientRouter />
 	</head>
 	<body>
 		<slot />
+		<footer>
+			<div class="layout">
+				&copy; {today.getFullYear()} Spot Vallette
+			</div>
+		</footer>
+		<script>
+			AOS.init();
+		</script>
 	</body>
 </html>
 
@@ -19,5 +44,9 @@
 		margin: 0;
 		width: 100%;
 		height: 100%;
+	}
+	footer {
+		padding: 5rem;
+		text-align: center;
 	}
 </style>

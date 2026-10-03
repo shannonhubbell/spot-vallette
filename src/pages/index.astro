@@ -1,11 +1,63 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import HomeHeader from "../components/HomeHeader.astro";
+import MenuSection from "../components/MenuSection.astro";
+import EventHalloween from "../components/EventHalloween.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+	<HomeHeader />
+	<main class="layout">
+		<div class="col menu">
+			<h2>menu...</h2>
+			<p class="diet">
+				🌿 = Vegetarian!<br />
+				🦀 = Pescatarian!
+			</p>
+			<MenuSection
+				header="Sandwiches"
+				description="Quidem pariatur dolore cillum ut ut sint molestias tempor provident."
+				slug="sandwich"
+			/>
+
+			<MenuSection
+				header="Entrees"
+				description="Quidem pariatur dolore cillum ut ut sint molestias tempor provident."
+				slug="entree"
+			/>
+
+			<MenuSection
+				header="Desserts"
+				description="Quidem pariatur dolore cillum ut ut sint molestias tempor provident."
+				slug="dessert"
+			/>
+
+		</div>
+	</main>
+	<EventHalloween />
 </Layout>
+
+<style>
+	.layout {
+		display: flex;
+		justify-content: space-between;
+		@media (max-width: 768px) {
+			}
+
+	}
+
+	h2 {
+		font-size: 4rem;
+		color: #fff;
+		margin: 0;
+		text-align: center;
+		padding: 0;
+	}
+	.diet {
+		text-align: center;
+		margin: 0;
+	}
+</style>
