@@ -1,11 +1,10 @@
 ---
 import ShipWheel from "../assets/img/ship-wheel.svg";
-
 ---
 
 <header id="home-header">
     <img src={ShipWheel.src} class="ship-wheel" alt="Ship's Wheel" />
-    <div class="layout"  data-aos="fade-up" data-aos-duration="2000">
+    <div class="layout" data-aos="fade-up" data-aos-duration="2000">
         <h1>Spot Vallette</h1>
         <h2>New Orleans Eats</h2>
     </div>
@@ -80,6 +79,7 @@ import ShipWheel from "../assets/img/ship-wheel.svg";
         font-size: 3rem;
         line-height: 100%;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        transform: rotate(-2deg);
     }
 
     @media (max-width: 768px) {
@@ -122,11 +122,13 @@ import ShipWheel from "../assets/img/ship-wheel.svg";
         color: #fff;
         font-weight: bold;
         display: inline-block;
-        border: 1px solid #fff;
         padding: 1.5rem;
         min-width: 300px;
         margin: 3rem 0 0 0;
         position: relative;
+        box-shadow: 5px -6px 44px -15px #000000;
+        border-radius: 10px;
+        transform: rotate(5deg);
         a.cta {
             position: absolute;
             background: #000;
@@ -147,12 +149,15 @@ import ShipWheel from "../assets/img/ship-wheel.svg";
             font-style: normal;
             font-size: 1.5rem;
             color: #e1f4cb;
+            font-weight: 200;
         }
         dl {
             border-top: 1px solid #fff;
             padding: 1rem 0 0 0;
             display: block;
             margin: 1em 0 0;
+            font-weight: 200;
+
             dt {
                 padding-top: 0 0 0 0;
                 display: block;
