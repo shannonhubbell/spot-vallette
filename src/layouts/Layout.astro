@@ -2,6 +2,7 @@
 import { ClientRouter } from "astro:transitions";
 const today = new Date();
 import "../styles/general.css";
+import 'aos/dist/aos.css';
 
 const { title, description } = Astro.props;
 const tabTitle = title ? title : "New Orleans Eats";
@@ -33,6 +34,7 @@ const tabTitle = title ? title : "New Orleans Eats";
 			</div>
 		</footer>
 		<script>
+			import AOS from "aos";
 			AOS.init();
 		</script>
 	</body>

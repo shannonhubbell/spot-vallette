@@ -1,11 +1,12 @@
 ---
 import { Image } from "astro:assets";
 import ShipWheel from "../assets/img/ship-wheel-cropped.svg";
+
 ---
 
 <header id="home-header">
     <Image src={ShipWheel} class="ship-wheel" alt="Ship's Wheel" />
-    <div class="layout">
+    <div class="layout"  data-aos="fade-up" data-aos-duration="2000">
         <h1>Spot Vallette</h1>
         <h2>New Orleans Eats</h2>
     </div>
