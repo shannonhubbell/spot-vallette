@@ -1,11 +1,10 @@
 ---
-import { Image } from "astro:assets";
-import ShipWheel from "../assets/img/ship-wheel-cropped.svg";
+import ShipWheel from "../assets/img/ship-wheel.svg";
 
 ---
 
 <header id="home-header">
-    <Image src={ShipWheel} class="ship-wheel" alt="Ship's Wheel" />
+    <img src={ShipWheel.src} class="ship-wheel" alt="Ship's Wheel" />
     <div class="layout"  data-aos="fade-up" data-aos-duration="2000">
         <h1>Spot Vallette</h1>
         <h2>New Orleans Eats</h2>
@@ -58,14 +57,13 @@ import ShipWheel from "../assets/img/ship-wheel-cropped.svg";
         .ship-wheel {
             position: absolute;
             top: -55%;
-            right: -50%;
-            width: 250%;
-            height: 250%;
-            aspect-ratio: auto;
+            right: -25%;
+            width: 150%;
+            height: auto;
             transform: rotate(70deg);
-            animation: spin 30s linear infinite;
+            animation: spin 60s linear infinite;
             transform-origin: center;
-            opacity: 0.25;
+            opacity: 0.15;
         }
     }
     h1 {
