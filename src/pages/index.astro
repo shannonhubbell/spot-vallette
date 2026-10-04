@@ -31,11 +31,6 @@ import MenuSection from "../components/MenuSection.astro";
 					slug="sandwich"
 				/>
 
-				<MenuSection
-					header="Desserts"
-					description="Quidem pariatur dolore cillum ut ut sint molestias tempor provident."
-					slug="dessert"
-				/>
 			</div>
 			<div class="col">
 
@@ -43,6 +38,12 @@ import MenuSection from "../components/MenuSection.astro";
 					header="Entrees"
 					description="Quidem pariatur dolore cillum ut ut sint molestias tempor provident."
 					slug="entree"
+				/>
+
+				<MenuSection
+					header="Desserts"
+					description="Quidem pariatur dolore cillum ut ut sint molestias tempor provident."
+					slug="dessert"
 				/>
 
 			</div>
@@ -58,6 +59,13 @@ import MenuSection from "../components/MenuSection.astro";
 		.col {
 			width: calc(50% - 1rem);
 		}
+		@media (max-width: 750px) {
+			display: block;
+			.col {
+				width: auto;
+			}
+		}
+			
 	}
 
 	h2 {

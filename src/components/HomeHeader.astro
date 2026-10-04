@@ -1,9 +1,17 @@
 ---
 import ShipWheel from "../assets/img/ship-wheel.svg";
+import Bluesky from "../assets/img/bluesky.svg";
+import Facebook from "../assets/img/facebook.svg";
 ---
 
 <header id="home-header">
     <img src={ShipWheel.src} class="ship-wheel" alt="Ship's Wheel" />
+    <nav class="social">
+        <ul>
+            <li><img src={Bluesky.src} class="icon" alt="Bluesky Logo" /></li>
+            <li><img src={Facebook.src} class="icon" alt="Facebook Logo" /></li>
+        </ul>
+    </nav>
     <div class="layout" data-aos="fade-up" data-aos-duration="2000">
         <h1>Spot Vallette</h1>
         <h2>New Orleans Eats</h2>
@@ -56,6 +64,25 @@ import ShipWheel from "../assets/img/ship-wheel.svg";
         padding: 5rem 0;
         overflow: hidden;
         box-shadow: 5px -6px 44px -15px #000000;
+        .social {
+            position: absolute;
+            right: 0;
+            top: 0;
+            ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                gap: 20px;
+                padding: 0.5rem;
+                background: var(--color-dark);
+                border-bottom-left-radius: 1rem;
+            }
+            img {
+                height: 50px;
+                cursor: pointer;
+            }
+        }
         .ship-wheel {
             position: absolute;
             top: -55%;
@@ -126,13 +153,18 @@ import ShipWheel from "../assets/img/ship-wheel.svg";
         font-weight: bold;
         display: inline-block;
         padding: 1.5rem;
-        min-width: 450px;
+        max-width: calc(100% - 2rem);
+        width: 500px;
         margin: 3rem 0 0 0;
         position: relative;
         box-shadow: 5px -6px 44px -15px #000000;
         border-radius: 10px;
         transform: rotate(5deg);
         border: 1px solid var(--color-light);
+        @media (max-width: 768px) {
+            transform: rotate(0);
+            width: auto;
+        }
         a.cta {
             position: absolute;
             background: #000;
