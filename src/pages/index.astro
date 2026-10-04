@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import HomeHeader from "../components/HomeHeader.astro";
 import MenuSection from "../components/MenuSection.astro";
-import EventHalloween from "../components/EventHalloween.astro";
+// import EventHalloween from "../components/EventHalloween.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -11,42 +11,53 @@ import EventHalloween from "../components/EventHalloween.astro";
 <Layout>
 	<HomeHeader />
 	<main class="layout">
-		<div class="col menu">
-			<h2>menu...</h2>
-			<p class="diet">
-				🌿 = Vegetarian!<br />
-				🦀 = Pescatarian!
-			</p>
-			<MenuSection
-				header="Sandwiches"
-				description="Quidem pariatur dolore cillum ut ut sint molestias tempor provident."
-				slug="sandwich"
-			/>
+		<h2>menu...</h2>
+				<p class="diet">
+					🌿 = Vegetarian!<br />
+					🦀 = Pescatarian!
+				</p>
+		<div class="menu">
+			<div class="col">
 
-			<MenuSection
-				header="Entrees"
-				description="Quidem pariatur dolore cillum ut ut sint molestias tempor provident."
-				slug="entree"
-			/>
+				<MenuSection
+					header="Appetizers"
+					description="Quidem pariatur dolore cillum ut ut sint molestias tempor provident."
+					slug="appetizer"
+				/>
 
-			<MenuSection
-				header="Desserts"
-				description="Quidem pariatur dolore cillum ut ut sint molestias tempor provident."
-				slug="dessert"
-			/>
+				<MenuSection
+					header="Sandwiches"
+					description="Quidem pariatur dolore cillum ut ut sint molestias tempor provident."
+					slug="sandwich"
+				/>
 
+				<MenuSection
+					header="Desserts"
+					description="Quidem pariatur dolore cillum ut ut sint molestias tempor provident."
+					slug="dessert"
+				/>
+			</div>
+			<div class="col">
+
+				<MenuSection
+					header="Entrees"
+					description="Quidem pariatur dolore cillum ut ut sint molestias tempor provident."
+					slug="entree"
+				/>
+
+			</div>
 		</div>
 	</main>
-	<EventHalloween />
 </Layout>
 
 <style>
-	.layout {
+
+	.menu {
 		display: flex;
 		justify-content: space-between;
-		@media (max-width: 768px) {
-			}
-
+		.col {
+			width: calc(50% - 1rem);
+		}
 	}
 
 	h2 {

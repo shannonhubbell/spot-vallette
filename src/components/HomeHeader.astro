@@ -9,12 +9,15 @@ import ShipWheel from "../assets/img/ship-wheel.svg";
         <h2>New Orleans Eats</h2>
     </div>
     <div class="info">
+        <!--
         <a href="#halloween" class="cta shiver">
             Costume Contest!<br />This Halloween!
         </a>
+    -->
         <address>
             1926 Hubbell Road<br />
-            Oakland, CA 94607
+            Oakland, CA 94607<br />
+            <a href="mailto:info@spotvallette.yum">info@spotvallette.yum</a>
         </address>
         <dl>
             <dt>Monday - Thursday</dt>
@@ -123,12 +126,13 @@ import ShipWheel from "../assets/img/ship-wheel.svg";
         font-weight: bold;
         display: inline-block;
         padding: 1.5rem;
-        min-width: 300px;
+        min-width: 450px;
         margin: 3rem 0 0 0;
         position: relative;
         box-shadow: 5px -6px 44px -15px #000000;
         border-radius: 10px;
         transform: rotate(5deg);
+        border: 1px solid var(--color-light);
         a.cta {
             position: absolute;
             background: #000;
@@ -150,6 +154,9 @@ import ShipWheel from "../assets/img/ship-wheel.svg";
             font-size: 1.5rem;
             color: #e1f4cb;
             font-weight: 200;
+            a {
+                color: #e1f4cb;
+            }
         }
         dl {
             border-top: 1px solid #fff;
