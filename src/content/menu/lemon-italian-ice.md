@@ -1,6 +1,6 @@
 ---
 name: Lemon Italian Ice
-description: Angelo Brocato's refreshing, tangy treat!
+description: Lorem ipsum dolor sit amet consectetur adipiscing elit.
 price: 4.00
 image: ../../assets/img/menu/lemon-ice.webp
 tags:

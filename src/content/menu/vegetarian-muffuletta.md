@@ -1,6 +1,6 @@
 ---
 name: Vegetarian Muffuletta
-description: Better than Central Grocery's vegetarian muffuletta. Which ain't saying much, but it's good! We swear!
+description: Lorem ipsum dolor sit amet consectetur adipiscing elit.
 price: 9.00
 image: ../../assets/img/menu/muffaletta.webp
 tags:

@@ -1,6 +1,6 @@
 ---
 name: Seafood Gumbo
-description: "Step one: make a roux. Step two: ??? Step three: profit."
+description: Lorem ipsum dolor sit amet consectetur adipiscing elit.
 price: 15.00
 image: ../../assets/img/menu/gumbo.webp
 tags:
