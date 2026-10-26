@@ -5,6 +5,7 @@ import "../styles/general.css";
 import 'aos/dist/aos.css';
 
 import PortfolioBar from "../components/PortfolioBar.astro";
+import BackToTop from "../components/BackToTop.astro";
 
 const { title, description } = Astro.props;
 const tabTitle = title ? title : "New Orleans Eats";
@@ -36,6 +37,7 @@ const tabTitle = title ? title : "New Orleans Eats";
 				&copy; {today.getFullYear()} Spot Vallette
 			</div>
 		</footer>
+		<BackToTop />
 		<script>
 			import AOS from "aos";
 			AOS.init();
